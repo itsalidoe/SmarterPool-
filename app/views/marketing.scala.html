@@ -1,0 +1,14 @@
+@(featurettes: List[controllers.bootstrap.Featurette])(spanClass: String)
+
+<div class="row">
+    @featurettes.map { feature =>
+        <div class="@spanClass @feature.classes">
+            <img class="img-circle" src="@feature.imageLink" data-src="holder.js/140x140">
+            <h2>@feature.title</h2>
+            <p>@feature.lead</p>
+            @if(feature.button != "") {
+                <p><a class="btn" href="@feature.buttonLink">@feature.button &raquo;</a></p>
+            }
+        </div>
+    }
+</div>
