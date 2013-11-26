@@ -6,6 +6,7 @@
 GET     /                           controllers.Companies.index
 GET     /companies                  controllers.Companies.index
 GET     /companies/faq              controllers.Companies.faq
+GET     /companies/contact          controllers.Companies.contact
 POST    /companies/signUp           controllers.Companies.signUp
 GET     /students                   controllers.Students.index
 GET     /students/signUp            controllers.Students.signUp
