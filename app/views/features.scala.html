@@ -1,18 +1,24 @@
 @(featurettes: List[controllers.bootstrap.Featurette])
 
 <div class="featurette">
-    <hr class="featurette-divider">
-
     @featurettes.map { feature =>
-        @if(feature.imageLink != "") {
-            <img class="featurette-image pull-left" src="feature.imageLink">
-        }
-        <h2 class="featurette-heading">@feature.title <span class="muted">@feature.tagline</span></h2>
-        <p class="lead">@feature.lead</p>
-        @if(feature.button != "") {
-            <a class="btn btn-large btn-primary" href="@feature.buttonLink">@feature.button</a>
-        }
+        <div class="@feature.classes">
+            @if(feature.imageLink != "") {
+            <div class="pull-@feature.imagePull span4">
+                    <img class="featurette-image" src="@feature.imageLink"
+                    @if(feature.id != "") {
+                        id="@feature.id"
+                    }>
+            </div>
+            }
+            <div>
+                <h2 class="featurette-heading">@feature.title <span class="muted">@feature.tagline</span></h2>
+                <p class="lead">@feature.lead</p>
 
-        <hr class="featurette-divider">
+                @if(feature.button != "") {
+                    <a class="btn btn-large btn-primary" href="@feature.buttonLink">@feature.button</a>
+                }
+            </div>
+        </div>
     }
 </div>

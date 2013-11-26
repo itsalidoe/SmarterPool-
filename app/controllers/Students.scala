@@ -10,7 +10,7 @@ import controllers.bootstrap.{Features, Marketing, Carousel, Featurette}
  * Time: 7:32 PM
  * To change this template use File | Settings | File Templates.
  */
-object Students  extends Controller {
+object Students extends Controller {
 
   def index = Action {
     val carouselFeatures: List[Featurette] = List(
@@ -19,6 +19,7 @@ object Students  extends Controller {
         "There are over 2000 open positions and counting.",
         "Sign up today",
         imageLink = routes.Assets.at("images/slide-01.jpg").toString(),
+        buttonLink = "#signup",
         classes = "active"
       )
     )
@@ -27,15 +28,18 @@ object Students  extends Controller {
     val marketingFeatures: List[Featurette] = List(
       new Featurette(
         "Earn Prizes and Find Employment.",
-        "The vast majority of the challenges posted offer prizes, and a chance for employment on a successful application."
-      ),
-      new Featurette(
-        "Solve Real Challenges.",
-        "Real employers post challenges in order to attract the best and brightest. This includes you."
+        "The vast majority of the challenges posted offer prizes, and a chance for employment on a successful application.",
+        imageLink = routes.Assets.at("images/awards.png").toString()
       ),
       new Featurette(
         "Connect With Mentors.",
-        "Have a brilliant idea for a new Startup? We are connected with a list of serial entrepreneurs who have been through the same situation."
+        "Have a brilliant idea for a new Startup? We are connected with a list of serial entrepreneurs who have been through the same situation.",
+        imageLink = routes.Assets.at("images/connect.png").toString()
+      ),
+      new Featurette(
+        "Solve Real Challenges.",
+        "Real employers post challenges in order to attract the best and brightest. This includes you.",
+        imageLink = routes.Assets.at("images/solve-challenges.png").toString()
       )
     )
     val marketing = new Marketing(marketingFeatures)
@@ -44,12 +48,14 @@ object Students  extends Controller {
       new Featurette(
         "Oh yeah, it's that good.",
         "Sign up to view the complete list of companies that we are partnered with.",
-        "Sign up Today",
         tagline = "See for yourself."
       )
     )
     val feature = new Features(features)
-    Ok(views.html.base("Companies.")(carousel.Html)(marketing.Html)(feature.Html))
+    Ok(views.html.base("Companies.")(carousel.Html)(marketing.Html + feature.Html + views.html.signup.student_signup.apply()))
   }
 
+  def signUp = Action {
+    Ok("")
+  }
 }

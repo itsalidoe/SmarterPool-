@@ -1,0 +1,81 @@
+<form class="form-horizontal" id="signup" action="@routes.Students.signUp()">
+    <fieldset>
+
+        <!-- Form Name -->
+        <legend>Sign up today!</legend>
+
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label" for="username">Username</label>
+            <div class="controls">
+                <input id="username" name="username" type="text" placeholder="username" class="input-xxlarge" required="">
+            </div>
+        </div>
+
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label" for="email">Email</label>
+            <div class="controls">
+                <input id="email" name="email" type="text" placeholder="email@@email.com" class="input-xxlarge" required="">
+            </div>
+        </div>
+
+        <!-- Password input-->
+        <div class="control-group">
+            <label class="control-label" for="password">Password</label>
+            <div class="controls">
+                <input id="password" name="password" type="password" placeholder="password" class="input-xxlarge" required="">
+            </div>
+        </div>
+
+        <!-- Password input-->
+        <div class="control-group">
+            <label class="control-label" for="password_verify">Password (again)</label>
+            <div class="controls">
+                <input id="password_verify" name="password_verify" type="password" placeholder="password" class="input-xxlarge" required="">
+            </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="control-group">
+            <label class="control-label" for="school">University / College</label>
+            <div class="controls">
+                <select id="school" name="school" class="input-xxlarge">
+                    <option>Option one</option>
+                    <option>Option two</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="control-group">
+            <label class="control-label" for="major">Major</label>
+            <div class="controls">
+                <select id="major" name="major" class="input-xxlarge">
+                    <option>Option one</option>
+                    <option>Option two</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Select Basic -->
+        <div class="control-group">
+            <label class="control-label" for="field">Field</label>
+            <div class="controls">
+                <select id="field" name="field" class="input-xxlarge">
+                    <option>Option one</option>
+                    <option>Option two</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Button -->
+        <div class="control-group">
+            <label class="control-label" for="submit"></label>
+            <div class="controls">
+                <input type="submit" id="submit" name="submit" class="btn btn-success" value="Submit">
+            </div>
+        </div>
+
+    </fieldset>
+</form>

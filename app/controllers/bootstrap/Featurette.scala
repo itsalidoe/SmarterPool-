@@ -14,5 +14,7 @@ class Featurette(
   val buttonLink: String = "#",
   val tagline: String = "",
   val imageLink: String = "",
-  val classes: String = "") {
+  val imagePull: String = "left",
+  val classes: String = "",
+  val id: String = "") {
 }

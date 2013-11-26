@@ -9,9 +9,9 @@ import play.api.templates.Html
  * Time: 6:18 PM
  * To change this template use File | Settings | File Templates.
  */
-class Marketing (val featurettes: List[Featurette]) {
+class Marketing (val featurettes: List[Featurette], minimum: Int = 4) {
   def Html: Html = {
-    val spanClass = "span" + (12/featurettes.count(_ => true).min(4)).toString
+    val spanClass = "span" + (12/featurettes.count(_ => true).min(minimum)).toString
     views.html.marketing(featurettes)(spanClass)
   }
 }

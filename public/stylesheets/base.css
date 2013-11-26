@@ -132,17 +132,25 @@ body {
 }
 .featurette {
   overflow: hidden; /* Vertically center images part 2: clear their floats. */
+  clear: both;
 }
 .featurette-image {
-  margin-top: -120px; /* Vertically center images part 3: negative margin up the image the same amount of the padding to center it. */
+  /* border: solid 1px #C0C0C0; */
+  background-color: #C0C0C0;
+  max-height: 350px;
+}
+
+.featurette .withImage {
+  height: 350px;
 }
 
 /* Give some space on the sides of the floated elements so text doesn't run right into it. */
-.featurette-image.pull-left {
+.pull-left {
+  margin-left: 10px;
   margin-right: 40px;
 }
-.featurette-image.pull-right {
-  margin-left: 40px;
+.pull-right .featurette-image {
+  margin-right: 10px;
 }
 
 /* Thin out the marketing headings */
@@ -240,5 +248,9 @@ body {
 /* Smarter Pool Specific
 -------------------------------------------------- */
 .logo-pool {
-    color: #08C;
+  color: #08C;
+}
+
+.span7, .span4 {
+  margin-left: 0 !important;
 }

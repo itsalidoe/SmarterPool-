@@ -1,0 +1,7 @@
+CREATE TABLE Company (
+    id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    timestamp VARCHAR(255) NOT NULL,
+    companyName VARCHAR(255) NOT NULL,
+    password  VARCHAR(255) NOT NULL,
+    field VARCHAR(255) NOT NULL
+)

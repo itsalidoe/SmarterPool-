@@ -2,7 +2,10 @@
 
 <div class="row">
     @featurettes.map { feature =>
-        <div class="@spanClass @feature.classes">
+        <div class="@spanClass @feature.classes"
+            @if(feature.id != "") {
+                id="feature.id"
+            }>
             <img class="img-circle" src="@feature.imageLink" data-src="holder.js/140x140">
             <h2>@feature.title</h2>
             <p>@feature.lead</p>
