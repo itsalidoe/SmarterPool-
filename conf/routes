@@ -3,7 +3,7 @@
 # ~~~~
 
 # Home page
-GET     /                           controllers.Companies.index
+GET     /                           controllers.Students.index
 GET     /companies                  controllers.Companies.index
 GET     /companies/faq              controllers.Companies.faq
 GET     /companies/contact          controllers.Companies.contact

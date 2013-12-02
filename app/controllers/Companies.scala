@@ -120,7 +120,7 @@ object Companies extends Controller {
       )
     )
     val feature = new Features(features)
-    Ok(views.html.base("Companies.")(carousel.Html)(marketing.Html + feature.Html + views.html.signup.company_signup.apply())("home"))
+    Ok(views.html.base("Companies.")(carousel.Html)(marketing.Html + feature.Html + views.html.signup.company_signup.apply())("companies"))
   }
 
   def signUp = Action { request =>
