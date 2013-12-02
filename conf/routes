@@ -10,7 +10,9 @@ GET     /companies/contact          controllers.Companies.contact
 POST    /companies/signUp           controllers.Companies.signUp
 GET     /students                   controllers.Students.index
 POST    /students/signUp            controllers.Students.signUp
-GET     /sorry                     controllers.Status.Failure
+GET     /mentors                    controllers.Mentors.index
+POST    /mentors/signUp             controllers.Mentors.signUp
+GET     /sorry                      controllers.Status.Failure
 GET     /thanks                     controllers.Status.Success
 
 # Map static resources from the /public folder to the /assets URL path

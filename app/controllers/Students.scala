@@ -73,6 +73,7 @@ object Students extends Controller {
       )
     )
     val marketing = new Marketing(marketingFeatures, 2)
+
     val howItWorks: List[Featurette] = List(
       new Featurette(
         "Companies Post Challenges",
