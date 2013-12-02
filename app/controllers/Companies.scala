@@ -3,6 +3,7 @@ package controllers
 import play.api.mvc._
 import controllers.bootstrap.{Features, Marketing, Carousel, Featurette}
 import play.api.templates.Html
+import models.Company
 
 object Companies extends Controller {
   
@@ -82,7 +83,7 @@ object Companies extends Controller {
         id = "challenge"
       ),
       new Featurette(
-        "Robust Analytics.",
+        "Robust Analytics",
         """Manage your challenges in real time with our analytics tool.  This will help you see current results,
           |engagement of students, issues with your challenge, and much more.  Easily export the information to show
           |your colleagues.
@@ -93,7 +94,7 @@ object Companies extends Controller {
         id = "analytics"
       ),
       new Featurette(
-        "Gain visibility.",
+        "Gain visibility",
         """List basic information about your company so students can learn more about the work, culture, and skills
           |required to be hired.  Companies can also see which students have viewed the profile and are interested in
           |applying for future reference.
@@ -103,7 +104,7 @@ object Companies extends Controller {
         id = "smarterpool_advertise"
       ),
       new Featurette(
-        "Focus on the talent.",
+        "Focus on the talent",
         """Analyze everything about each of the candidates on the website, even if they have not applied to the challenge.
           |Browse their experiences, goals, resume and glimpse into their skills through the portfolio of their submissions.
         """.stripMargin,
@@ -122,8 +123,17 @@ object Companies extends Controller {
     Ok(views.html.base("Companies.")(carousel.Html)(marketing.Html + feature.Html + views.html.signup.company_signup.apply())("home"))
   }
 
-  def signUp = Action {
-    Ok("")
+  def signUp = Action { request =>
+    val companyName = request.body.asFormUrlEncoded.get("company") mkString ""
+    val field = request.body.asFormUrlEncoded.get("field") mkString ""
+    val email = request.body.asFormUrlEncoded.get("email") mkString ""
+    var company =  new Company(companyName = companyName, field = field, email = email)
+    var success = company.write()
+    if (success == None) {
+      controllers.Status.failure
+    } else {
+      controllers.Status.success
+    }
   }
 
   def faq = Action {

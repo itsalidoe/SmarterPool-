@@ -6,7 +6,9 @@
             @if(feature.id != "") {
                 id="feature.id"
             }>
-            <img class="img-circle" src="@feature.imageLink" data-src="holder.js/140x140">
+            <a href="@feature.imageLink">
+                <img class="img" src="@feature.imageLink" data-src="holder.js/140x140">
+            </a>
             <h2>@feature.title</h2>
             <p>@feature.lead</p>
             @if(feature.button != "") {
@@ -15,3 +17,4 @@
         </div>
     }
 </div>
+<hr class="featurette-divider"/>

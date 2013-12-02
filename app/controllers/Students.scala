@@ -2,6 +2,7 @@ package controllers
 
 import play.api.mvc._
 import controllers.bootstrap.{Features, Marketing, Carousel, Featurette}
+import models.Student
 
 /**
  * Created with IntelliJ IDEA.
@@ -15,34 +16,81 @@ object Students extends Controller {
   def index = Action {
     val carouselFeatures: List[Featurette] = List(
       new Featurette(
-        "We are partnered with 500+ companies.",
-        "There are over 2000 open positions and counting.",
+        "Solve some Interesting Real World Problems",
+        """Our platform makes it easy for you to solve challenges and showcase your skills to companies. Solve problems
+          |that interest you and relate to your skills and show us your creativity!
+        """.stripMargin,
         "Sign up today",
         imageLink = routes.Assets.at("images/slide-01.jpg").toString(),
         buttonLink = "#signup",
         classes = "active"
+      ),
+      new Featurette(
+        "Earn Rewards and Recognition",
+        """SmarterPool is about building a portfolio based on skills, so companies know you can execute. If companies
+          |like your work, you will be rewarded in cash, prizes or even employment with the company!
+        """.stripMargin,
+        "Sign up today",
+        imageLink = routes.Assets.at("images/slide-02.jpg").toString(),
+        buttonLink = "#signup"
+      ),
+      new Featurette(
+        "Find Career Resources",
+        """Our platform connects you with mentors and professionals in companies so you learn more about your career,
+          |the needs of the companies you like, and skills required to succeed.
+        """.stripMargin,
+        "Sign up today",
+        imageLink = routes.Assets.at("images/slide-03.jpg").toString(),
+        buttonLink = "#signup"
       )
     )
     val carousel = new Carousel(carouselFeatures)
 
     val marketingFeatures: List[Featurette] = List(
       new Featurette(
-        "Earn Prizes and Find Employment.",
-        "The vast majority of the challenges posted offer prizes, and a chance for employment on a successful application.",
-        imageLink = routes.Assets.at("images/awards.png").toString()
+        "What is SmarterPool?",
+        """SmarterPool is a an online platform that connects students with companies through real world challenges. This
+          |solution was created as a result of the high student/graduate unemployment and lack of corporate innovation
+          |happening in India. By posting challenges, companies identify students based on skills, and use a larger,
+          |smarter pool, to collaborate on innovative solutions. Students find challenges that resonate with their
+          |interests and studies, and earn temporary income for their work.
+        """.stripMargin
       ),
       new Featurette(
-        "Connect With Mentors.",
-        "Have a brilliant idea for a new Startup? We are connected with a list of serial entrepreneurs who have been through the same situation.",
-        imageLink = routes.Assets.at("images/connect.png").toString()
+        "What's in it for me?",
+        """SmarterPool targets medium and large sized companies that are looking to innovate. As a student, this
+          |platform allows you to notice some of the challenges companies are facing and show how you can help. This
+          |allows you to see what skills you need to learn to work at companies you like, and create a portfolio which
+          |you can show to any employer of work you can do. You also earn rewards and get access to career advisors and
+          |mentors. See our FAQ if you have more questions.
+        """.stripMargin
       ),
       new Featurette(
-        "Solve Real Challenges.",
-        "Real employers post challenges in order to attract the best and brightest. This includes you.",
-        imageLink = routes.Assets.at("images/solve-challenges.png").toString()
+        "",
+        "",
+        button = "See Our FAQ",
+        buttonLink = routes.Companies.faq.toString()
       )
     )
-    val marketing = new Marketing(marketingFeatures)
+    val marketing = new Marketing(marketingFeatures, 2)
+    val howItWorks: List[Featurette] = List(
+      new Featurette(
+        "Companies Post Challenges",
+        "",
+        imageLink = routes.Assets.at("images/compete.png").toString()
+      ),
+      new Featurette(
+        "Students submit ideas and solutions",
+        "",
+        imageLink = routes.Assets.at("images/idea.png").toString()
+      ),
+      new Featurette(
+        "Students earn rewards and recognition for their work",
+        "",
+        imageLink = routes.Assets.at("images/awards.png").toString()
+      )
+    )
+    val howItWorksMarketing = new Marketing(howItWorks, 3)
 
     val features: List[Featurette] = List(
       new Featurette(
@@ -52,10 +100,22 @@ object Students extends Controller {
       )
     )
     val feature = new Features(features)
-    Ok(views.html.base("Companies.")(carousel.Html)(marketing.Html + feature.Html + views.html.signup.student_signup.apply())("home"))
+    Ok(views.html.base("Students.")(carousel.Html)(howItWorksMarketing.Html + marketing.Html + feature.Html + views.html.signup.student_signup.apply())("students"))
   }
 
-  def signUp = Action {
-    Ok("")
+  def signUp = Action { request =>
+    val username = request.body.asFormUrlEncoded.get("username") mkString ""
+    val password = request.body.asFormUrlEncoded.get("password") mkString ""
+    val school = request.body.asFormUrlEncoded.get("school") mkString ""
+    val email = request.body.asFormUrlEncoded.get("email") mkString ""
+    val major = request.body.asFormUrlEncoded.get("major") mkString ""
+    val field = request.body.asFormUrlEncoded.get("field") mkString ""
+    var student =  new Student(username = username, password = password, school = school, email = email, major  = major, field = field)
+    var success = student.write()
+    if (success == None) {
+      controllers.Status.failure
+    } else {
+      controllers.Status.success
+    }
   }
 }

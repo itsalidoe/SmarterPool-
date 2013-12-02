@@ -13,7 +13,7 @@ class Company(
                var id: Int = 0,
                var timestamp: Int = 0,
                var companyName: String = "",
-               var password: String = "",
+               var email: String = "",
                var field: String = "")
   extends Model[Company] {
   def tableName = "Company"
