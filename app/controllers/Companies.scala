@@ -137,6 +137,7 @@ object Companies extends Controller {
   }
 
   def faq = Action {
+    // TODO: Read FAQ file, and fill it out.
     Ok(views.html.base("companies.")(new Html(new StringBuilder))(views.html.faq())("faq"))
   }
 
