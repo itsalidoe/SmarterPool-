@@ -12,12 +12,11 @@ import java.lang.reflect.Field
 class Student(
                var id: Int = 0,
                var timestamp: Int = 0,
-               var username: String = "",
+               var fullName: String = "",
                var password: String = "",
                var school: String = "",
                var email: String = "",
                var major: String = "",
-               var field: String = "",
                var linkedinId: String = "")
   extends Model[Student] {
   def tableName = "Student"
