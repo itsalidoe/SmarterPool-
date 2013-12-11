@@ -7,14 +7,13 @@ package controllers.bootstrap
  * Time: 5:11 PM
  * To change this template use File | Settings | File Templates.
  */
-class Featurette(
-  val title: String,
-  val lead: String,
-  val button: String = "",
-  val buttonLink: String = "#",
-  val tagline: String = "",
-  val imageLink: String = "",
-  val imagePull: String = "left",
-  val classes: String = "",
-  val id: String = "") {
-}
+case class Featurette(
+  title: String,
+  lead: String,
+  button: String = "",
+  buttonLink: String = "#",
+  tagline: String = "",
+  imageLink: String = "",
+  imagePull: String = "left",
+  classes: String = "",
+  id: String = "")

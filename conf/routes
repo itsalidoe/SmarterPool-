@@ -4,9 +4,9 @@
 
 # Home page
 GET     /                           controllers.Students.index
+GET     /faq                        controllers.General.faq
+GET     /contact                    controllers.General.contact
 GET     /companies                  controllers.Companies.index
-GET     /companies/faq              controllers.Companies.faq
-GET     /companies/contact          controllers.Companies.contact
 POST    /companies/signUp           controllers.Companies.signUp
 GET     /students                   controllers.Students.index
 POST    /students/signUp            controllers.Students.signUp

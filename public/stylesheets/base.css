@@ -255,3 +255,7 @@ body {
 .span7, .span4 {
   margin-left: 0 !important;
 }
+
+.no-carousel-header {
+  margin-top: 125px;
+}

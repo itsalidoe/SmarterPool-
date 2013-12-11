@@ -1,20 +1,15 @@
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
+@(questions: List[controllers.general.Question])
 
-<h1>FAQ</h1>
+<h1 class="no-carousel-header">FAQ</h1>
 
 
 <hr class="featurette-divider">
 
-<h2><span class="muted">Q</span>. How Smart is the Pool?</h2>
-<p>
-    Although we are just launching, our current pool consists of over 1000 students from institutions such as IIT, IIM,
-    BITS and many more.  These students have studied a range of disciplines; have diverse work experiences, and unique
-    skillsets.  We are not limited to any degree or diploma type, meaning PHDs and Bachelors students can participate.
-    They want to build the skills needed for the jobs they want, and they want to see a prosperous India in the years
-    to come.
-</p>
+@questions.map { question =>
+    <h2><span class="muted">Q</span>. @question.question</h2>
+    <p>
+        @question.answer
+    </p>
+
+    <hr class="featurette-divider">
+}
