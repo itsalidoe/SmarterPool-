@@ -32,6 +32,7 @@ abstract class MarketingPage extends Controller {
       feature.copy(buttonLink = pathToUrl.getOrElse(feature.buttonLink, feature.buttonLink))
     }
   }
+
   def Carousel(file: String): Carousel = {
     new Carousel(features(file))
   }
