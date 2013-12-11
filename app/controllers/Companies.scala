@@ -125,9 +125,8 @@ object Companies extends Controller {
 
   def signUp = Action { request =>
     val companyName = request.body.asFormUrlEncoded.get("company") mkString ""
-    val field = request.body.asFormUrlEncoded.get("field") mkString ""
     val email = request.body.asFormUrlEncoded.get("email") mkString ""
-    var company =  new Company(companyName = companyName, field = field, email = email)
+    var company =  new Company(companyName = companyName, email = email)
     var success = company.write()
     if (success == None) {
       controllers.Status.failure

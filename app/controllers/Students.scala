@@ -2,7 +2,8 @@ package controllers
 
 import play.api.mvc._
 import controllers.bootstrap.{Features, Marketing, Carousel, Featurette}
-import models.Student
+import models.Student;
+import org.mindrot.jbcrypt.BCrypt;
 
 /**
  * Created with IntelliJ IDEA.
@@ -105,13 +106,13 @@ object Students extends Controller {
   }
 
   def signUp = Action { request =>
-    val username = request.body.asFormUrlEncoded.get("username") mkString ""
+    val fullName = request.body.asFormUrlEncoded.get("fullName") mkString ""
     val password = request.body.asFormUrlEncoded.get("password") mkString ""
+    val hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt())
     val school = request.body.asFormUrlEncoded.get("school") mkString ""
     val email = request.body.asFormUrlEncoded.get("email") mkString ""
     val major = request.body.asFormUrlEncoded.get("major") mkString ""
-    val field = request.body.asFormUrlEncoded.get("field") mkString ""
-    var student =  new Student(username = username, password = password, school = school, email = email, major  = major, field = field)
+    var student =  new Student(fullName = fullName, password = hashedPassword, school = school, email = email, major  = major)
     var success = student.write()
     if (success == None) {
       controllers.Status.failure

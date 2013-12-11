@@ -71,11 +71,8 @@ object Mentors extends Controller {
   }
 
   def signUp = Action { request =>
-    val username = request.body.asFormUrlEncoded.get("username") mkString ""
-    val password = request.body.asFormUrlEncoded.get("password") mkString ""
     val email = request.body.asFormUrlEncoded.get("email") mkString ""
-    val field = request.body.asFormUrlEncoded.get("field") mkString ""
-    var mentor =  new Mentor(username = username, password = password, email = email, field = field)
+    var mentor =  new Mentor(email = email)
     var success = mentor.write()
     if (success == None) {
       controllers.Status.failure

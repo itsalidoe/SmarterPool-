@@ -12,10 +12,7 @@ import java.lang.reflect.Field
 class Mentor(
                var id: Int = 0,
                var timestamp: Int = 0,
-               var username: String = "",
-               var password: String = "",
                var email: String = "",
-               var field: String = "",
                var linkedinId: String = "")
   extends Model[Mentor] {
   def tableName = "Mentor"
