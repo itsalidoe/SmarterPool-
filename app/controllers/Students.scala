@@ -7,14 +7,6 @@ import org.mindrot.jbcrypt.BCrypt
 import utilities.ContentReader
 ;
 
-/**
- * Created with IntelliJ IDEA.
- * User: sean
- * Date: 17/11/13
- * Time: 7:32 PM
- * To change this template use File | Settings | File Templates.
- */
-
 object Students extends MarketingPage {
 
   def index = Action {

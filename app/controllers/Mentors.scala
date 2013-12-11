@@ -4,13 +4,6 @@ import play.api.mvc._
 import controllers.bootstrap.{Features, Marketing, Carousel, Featurette}
 import models.Mentor
 
-/**
- * Created with IntelliJ IDEA.
- * User: sean
- * Date: 17/11/13
- * Time: 7:32 PM
- * To change this template use File | Settings | File Templates.
- */
 object Mentors extends MarketingPage {
 
   def index = Action {

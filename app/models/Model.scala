@@ -6,14 +6,6 @@ import java.util.HashMap
 import play.api.db.DB
 import play.api.Play.current
 
-/**
- * Created with IntelliJ IDEA.
- * User: sean
- * Date: 20/11/13
- * Time: 10:12 PM
- * To change this template use File | Settings | File Templates.
- */
-
 abstract class Model[T]() extends ModelUtilities{
   def getFields: Array[Field]
 
