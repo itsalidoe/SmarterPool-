@@ -5,6 +5,7 @@ import controllers.bootstrap.{Features, Marketing, Carousel, Featurette}
 import play.api.libs.json.Json
 import scala.collection.immutable.HashMap
 import utilities.ContentReader
+import play.api.templates.Html
 
 abstract class MarketingPage extends Controller {
 
@@ -26,15 +27,15 @@ abstract class MarketingPage extends Controller {
     }
   }
 
-  def Carousel(file: String): Carousel = {
-    new Carousel(features(file))
+  def Carousel(file: String): Html = {
+    new Carousel(features(file)).Html
   }
 
-  def Marketing(file: String, minimum: Int = 4): Marketing = {
-    new Marketing(features(file), minimum)
+  def Marketing(file: String, minimum: Int = 4): Html = {
+    new Marketing(features(file), minimum).Html
   }
 
-  def LargeMarketing(file: String): Features = {
-    new Features(features(file))
+  def LargeMarketing(file: String): Html = {
+    new Features(features(file)).Html
   }
 }

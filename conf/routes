@@ -8,7 +8,6 @@ GET     /faq                        controllers.General.faq
 GET     /contact                    controllers.General.contact
 GET     /companies                  controllers.Companies.index
 POST    /companies/signUp           controllers.Companies.signUp
-GET     /students                   controllers.Students.index
 POST    /students/signUp            controllers.Students.signUp
 GET     /mentors                    controllers.Mentors.index
 POST    /mentors/signUp             controllers.Mentors.signUp
