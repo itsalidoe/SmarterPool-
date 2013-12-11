@@ -3,6 +3,7 @@ package models
 import java.lang.reflect.Field
 
 trait ModelUtilities {
+
   protected def isNumeric(field: Field) = {
     List(
       "double",

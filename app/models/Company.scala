@@ -8,6 +8,7 @@ class Company(
                var companyName: String = "",
                var email: String = "")
   extends Model[Company] {
+
   def tableName = "Company"
   def instantiate = new Company()
   def getFields: Array[Field] = classOf[Company].getDeclaredFields

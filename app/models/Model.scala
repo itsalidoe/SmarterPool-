@@ -6,7 +6,8 @@ import java.util.HashMap
 import play.api.db.DB
 import play.api.Play.current
 
-abstract class Model[T]() extends ModelUtilities{
+abstract class Model[T]() extends ModelUtilities {
+
   def getFields: Array[Field]
 
   def instantiate: T
@@ -89,6 +90,7 @@ abstract class Model[T]() extends ModelUtilities{
 }
 
 case class Identifier(where: String, equality: String, value: Any, extra: String = "") {
+
   val strVal = (value match {
       case number: java.lang.Number => "%s%s%s%s"
       case _ => "%s%s'%s'%s"

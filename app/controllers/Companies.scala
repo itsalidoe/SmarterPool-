@@ -8,6 +8,7 @@ import play.api.libs.json.Json
 import scala.collection.immutable.HashMap
 
 object Companies extends MarketingPage {
+
   def index = Action {
     val carousel = Carousel("conf/content/companies/CarouselFeatures")
     val marketing = Marketing("conf/content/companies/MarketingFeatures", 2)

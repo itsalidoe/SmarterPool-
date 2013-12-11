@@ -12,6 +12,7 @@ class Student(
                var major: String = "",
                var linkedinId: String = "")
   extends Model[Student] {
+
   def tableName = "Student"
   def instantiate = new Student()
   def getFields: Array[Field] = classOf[Student].getDeclaredFields

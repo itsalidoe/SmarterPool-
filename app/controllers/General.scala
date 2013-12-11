@@ -7,6 +7,7 @@ import play.api.templates.Html
 import utilities.ContentReader
 
 object General extends Controller {
+
   def faq = Action {
     implicit val format = Json.format[Question]
     val faq = ContentReader.ReadJson[List[Question]]("conf/content/general/FAQ", List.empty)

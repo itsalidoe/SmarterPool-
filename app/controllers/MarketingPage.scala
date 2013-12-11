@@ -7,6 +7,7 @@ import scala.collection.immutable.HashMap
 import utilities.ContentReader
 
 abstract class MarketingPage extends Controller {
+
   implicit val format = Json.format[Featurette]
 
   val pathToUrl = HashMap[String, String](
