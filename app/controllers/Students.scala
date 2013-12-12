@@ -11,7 +11,7 @@ object Students extends MarketingPage {
 
   def index = Action {
     val carousel = Carousel("conf/content/students/CarouselFeatures")
-    val marketing = Marketing("conf/content/students/CarouselFeatures", 2)
+    val marketing = Marketing("conf/content/students/MarketingFeatures", 2)
     val howItWorksMarketing = Marketing("conf/content/students/HowItWorksFeatures", 3)
     val largeMarketing = LargeMarketing("conf/content/students/LargeMarketingFeatures")
     val universities = ContentReader.ReadJson[List[String]]("conf/content/students/Universities", List.empty)
