@@ -6,7 +6,7 @@ import play.api.mvc._
 import play.api.templates.Html
 import utilities.ContentReader
 
-object General extends Controller {
+object General extends MarketingPage {
 
   def faq = Action {
     implicit val format = Json.format[Question]
@@ -15,6 +15,7 @@ object General extends Controller {
   }
 
   def contact = Action {
-    Ok(views.html.base("companies.")(new Html(new StringBuilder))(views.html.contact())("contact"))
+    val marketing = LargeMarketing("conf/content/general/contact/LargeMarketingFeatures")
+    Ok(views.html.base("companies.")(new Html(new StringBuilder))(views.html.contact() += marketing)("contact"))
   }
 }
