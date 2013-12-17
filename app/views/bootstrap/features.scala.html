@@ -4,7 +4,7 @@
     @featurettes.map { feature =>
         <div class="@feature.classes">
             @if(feature.imageLink != "") {
-            <div class="pull-@feature.imagePull span4">
+            <div class="pull-@feature.imagePull">
                 <a href="@feature.imageLink">
                     <img class="featurette-image" src="@feature.imageLink"
                     @if(feature.id != "") {

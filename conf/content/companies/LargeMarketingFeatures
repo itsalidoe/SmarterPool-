@@ -8,7 +8,7 @@
       "buttonLink" : "",
       "tagline" : "",
       "imageLink" : "images/screenshots/competition.png",
-      "imagePull" : "",
+      "imagePull" : "left",
       "classes" : "withImage",
       "id" : "challenge"
     },
@@ -34,7 +34,7 @@
       "buttonLink" : "",
       "tagline" : "",
       "imageLink" : "images/screenshots/company_information.png",
-      "imagePull" : "",
+      "imagePull" : "left",
       "classes" : "withImage",
       "id" : "smarterpool_advertise"
     },
@@ -57,7 +57,7 @@
       "buttonLink" : "",
       "tagline" : "See for yourself.",
       "imageLink" : "",
-      "imagePull" : "",
+      "imagePull" : "left",
       "classes" : "",
       "id" : ""
     }

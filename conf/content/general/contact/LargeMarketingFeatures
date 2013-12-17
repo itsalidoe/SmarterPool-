@@ -9,8 +9,8 @@
       "buttonLink" : "",
       "tagline" : "bhaskar@smarterpool.com",
       "imageLink" : "images/headshots/Bhaskar.jpg",
-      "imagePull" : "",
-      "classes" : "",
+      "imagePull" : "left",
+      "classes" : "withImage",
       "id" : ""
     },
     {
@@ -23,8 +23,8 @@
       "buttonLink" : "",
       "tagline" : "ali@smarterpool.com",
       "imageLink" : "images/headshots/Ali.jpg",
-      "imagePull" : "",
-      "classes" : "",
+      "imagePull" : "right",
+      "classes" : "withImage",
       "id" : ""
     },
     {
@@ -37,8 +37,8 @@
       "buttonLink" : "",
       "tagline" : "sean@smarterpool.com",
       "imageLink" : "images/headshots/Sean.jpg",
-      "imagePull" : "",
-      "classes" : "",
+      "imagePull" : "left",
+      "classes" : "withImage",
       "id" : ""
     }
 ]
