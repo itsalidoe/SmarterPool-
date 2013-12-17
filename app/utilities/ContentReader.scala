@@ -10,7 +10,7 @@ object ContentReader {
 
   def ReadJson[T](filepath: String, default: T)(implicit fmt: Reads[T] = null): T = {
     Play.getExistingFile(filepath) map { file =>
-      val jsonStr = Files.toString(file, Charsets.UTF_8).replaceAllLiterally("\n", "")
+      val jsonStr = Files.toString(file, Charsets.UTF_8).replaceAllLiterally("\r\n", "").replaceAllLiterally("\n", "")
       Json.fromJson[T](
         Json.parse(jsonStr)
       )(fmt) getOrElse default
