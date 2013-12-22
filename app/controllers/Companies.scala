@@ -14,7 +14,7 @@ object Companies extends MarketingPage {
     val marketing = Marketing("conf/content/companies/MarketingFeatures", 2)
     val largeMarketing = LargeMarketing("conf/content/companies/LargeMarketingFeatures")
 
-    Ok(views.html.base("Companies.")(carousel)(views.html.companies.apply() += marketing += largeMarketing += views.html.signup.company_signup.apply())("companies"))
+    Ok(views.html.base("Companies.")(carousel)(views.html.companies.apply() += marketing += largeMarketing += views.html.signup.company_signup.apply() += social)("companies"))
   }
 
   def signUp = Action { request =>
