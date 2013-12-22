@@ -1,3 +1,5 @@
+@(shareLink: String)
+
 <link rel="stylesheet" media="screen" href="@routes.Assets.at("stylesheets/social.css")">
 
 <div id="fb-root"></div>
@@ -14,13 +16,13 @@
         <script src="//platform.linkedin.com/in.js" type="text/javascript">
             lang: en_US
         </script>
-        <script type="IN/Share" data-counter="top" data-url="http://www.smarterpool.com"></script>
+        <script type="IN/Share" data-counter="top" data-url="@shareLink"></script>
     </div>
     <div id="twitter">
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.smarterpool.com" data-lang="en" data-count="vertical">Tweet</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="@shareLink" data-lang="en" data-count="vertical">Tweet</a>
         <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
     </div>
     <div id="facebook">
-        <div class="fb-like" data-href="http://www.smarterpool.com/" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
+        <div class="fb-like" data-href="@shareLink" data-layout="box_count" data-action="like" data-show-faces="true" data-share="true"></div>
     </div>
 </div>

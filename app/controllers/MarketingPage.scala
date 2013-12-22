@@ -9,7 +9,7 @@ import play.api.templates.Html
 
 abstract class MarketingPage extends Controller {
 
-  val social = views.html.general.social.apply()
+  val social = views.html.general.social("http://www.smarterpool.com")
   implicit val format = Json.format[Featurette]
 
   val pathToUrl = HashMap[String, String](
