@@ -7,4 +7,4 @@ CREATE TABLE Student (
     email VARCHAR(255) NOT NULL,
     major VARCHAR(255) NOT NULL,
     linkedinId VARCHAR(255)
-)
+);
