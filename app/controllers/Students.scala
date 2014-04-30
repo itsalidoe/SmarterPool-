@@ -17,7 +17,7 @@ object Students extends MarketingPage {
     val universities = ContentReader.ReadJson[List[String]]("conf/content/students/Universities", List.empty)
     val majors = ContentReader.ReadJson[List[String]]("conf/content/students/Majors", List.empty)
 
-    Ok(views.html.base("Students.")(carousel)(marketing += howItWorksMarketing += largeMarketing += views.html.signup.student_signup(universities, majors) += social)("students"))
+    Ok(views.html.base("Students.")(carousel)(marketing += howItWorksMarketing += largeMarketing += views.html.signup.student_signup(universities, majors))("students"))
   }
 
   def signUp = Action { request =>
